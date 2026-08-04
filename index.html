@@ -9,238 +9,108 @@
 
 <meta name="description" content="ITアウトソーシングと農業事業を展開。キッティング・インフラ・現地作業まで対応。エンジニア採用強化中。">
 
-<style>
-:root{
-  --main:#0b3d2e;
-  --accent:#c8a96a;
-}
+<link rel="stylesheet" href="style.css">
 
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:#f7f7f7;
-  color:#222;
-}
-
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:120px 20px;
-  background:linear-gradient(135deg,#06281d,#0b3d2e);
-  color:#fff;
-}
-
-.logo-img{
-  width:800px;
-  max-width:95%;
-}
-
-.catch{
-  font-size:36px;
-  font-weight:700;
-  margin-top:30px;
-}
-
-.subcatch{
-  margin-top:10px;
-  color:#d1d5db;
-}
-
-/* 数字 */
-.stats{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-top:40px;
-  flex-wrap:wrap;
-}
-
-.stat{
-  text-align:center;
-}
-
-.stat-num{
-  font-size:32px;
-  font-weight:700;
-  color:#fff;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 34px;
-  border-radius:30px;
-  background:var(--accent);
-  color:#fff;
-  text-decoration:none;
-}
-
-/* SECTION */
-.section{
-  max-width:1100px;
-  margin:80px auto;
-  padding:0 20px;
-}
-
-.section h2{
-  border-left:5px solid var(--main);
-  padding-left:10px;
-  margin-bottom:30px;
-}
-
-/* GRID */
-.grid{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.card{
-  flex:1;
-  min-width:260px;
-  background:#fff;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* VOICE */
-.voice{
-  background:#fff;
-  padding:25px;
-  border-radius:15px;
-  margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* FLOW */
-.flow-step{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-
-/* CTA */
-.cta{
-  background:#06281d;
-  color:#fff;
-  text-align:center;
-  padding:80px 20px;
-}
-
-footer{
-  text-align:center;
-  padding:40px;
-  background:#06281d;
-  color:#fff;
-}
-
-@media(max-width:768px){
-  .grid{flex-direction:column}
-}
-
-/* CONTACT FORM */
-.contact-form{
-  max-width:600px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.contact-form input,
-.contact-form textarea{
-  width:100%;
-  padding:14px;
-  border-radius:8px;
-  border:1px solid #ccc;
-  font-size:16px;
-}
-
-/* 高さ調整 */
-.contact-form input{
-  height:50px;
-}
-
-.contact-form textarea{
-  height:180px;
-  resize:vertical;
-}
-
-/* ボタン最下部＆中央 */
-.submit-btn{
-  margin-top:10px;
-  align-self:center;
-}
-
-/* CSS */
-.album-button {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.album-button a {
-    display: inline-block;
-    padding: 15px 40px;
-    background: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.album-button a:hover {
-    background: #555;
-    transform: scale(1.05);
-}
-
-</style>
 </head>
 
 <body>
 
-<!-- アルバムボタン -->
+<header>
+
+<div class="header-inner">
+
+<a href="#" class="logo">
+R HILL FARM
+</a>
+
+<nav>
+
+<ul>
+
+<li><a href="#">HOME</a></li>
+
+<li><a href="#company">COMPANY</a></li>
+
+<li><a href="#service">SERVICE</a></li>
+
+<li><a href="#contact">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+
+
+</div>
+
+</header> 
+<!--  アルバムボタン 
 <div class="album-button">
     <a href="album.html">R HILL FARM 業務風景アルバムはこちら</a>
 </div>
-
+-->
 
 
 <!-- HERO -->
 <section class="hero">
-<img src="img/logo.png" class="logo-img">
 
-<div class="catch">技術と農業で、未来をつくる</div>
-<div class="subcatch">ITアウトソーシング × 農業のハイブリッド企業</div>
+    <div class="hero-overlay"></div>
 
-<div class="stats">
-<div class="stat">
-<div class="stat-num">10,200台</div>
-<div>キッティング実績</div>
-</div>
+    <div class="hero-content">
 
-<div class="stat">
-<div class="stat-num">840台</div>
-<div>DAP取付</div>
-</div>
+        <img src="img/logo.png" class="logo-img" alt="R HILL FARM">
 
-<div class="stat">
-<div class="stat-num">全国対応</div>
-<div>エリア</div>
-</div>
-</div>
+        <p class="hero-subtitle">
+            IT × Agriculture
+        </p>
 
-<a href="#contact" class="btn">応募する</a>
+        <h1 class="hero-title">
+            R HILL FARM
+        </h1>
+
+        <p class="hero-text">
+            技術と農業で、未来をつくる。<br>
+            ITアウトソーシングと農業の力で、
+            企業と地域の未来を支えます。
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-num">10,200台</div>
+                <div>キッティング実績</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-num">840台</div>
+                <div>DAP取付</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-num">全国対応</div>
+                <div>対応エリア</div>
+            </div>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#services" class="btn-primary">
+                サービスを見る
+            </a>
+
+            <a href="#contact" class="btn-secondary">
+                お問い合わせ
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- 会社概要 -->
-<section class="section">
+<section class="section" id="company">
 <h2>会社概要</h2>
 <ul>
 
@@ -255,7 +125,7 @@ footer{
 </section>
 
 <!-- 営業：サービス -->
-<section class="section">
+<section class="section" id="service">
 <h2>サービス内容</h2>
 <div class="grid">
 
@@ -457,18 +327,11 @@ style="width:100%;padding:10px;margin-bottom:10px"></textarea>
 <button class="btn" type="submit">送信する</button>
 </form>
 
-
-
-
-
-
-
-
-
-
 </section>
 
 <footer>© 株式会社R HILL FARM</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
