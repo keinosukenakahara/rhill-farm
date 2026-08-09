@@ -15,35 +15,75 @@
 
 <body>
 
-<header>
+<div id="page-loader">
 
-<div class="header-inner">
+    <div class="loader-content">
 
-<a href="#" class="logo">
-R HILL FARM
-</a>
+        <img
+            src="img/logo.jpg"
+            alt="R HILL FARM"
+            class="loader-logo"
+        >
 
-<nav>
+        <div class="loader-line"></div>
 
-<ul>
-
-<li><a href="#">HOME</a></li>
-
-<li><a href="#company">COMPANY</a></li>
-
-<li><a href="#service">SERVICE</a></li>
-
-<li><a href="#contact">CONTACT</a></li>
-
-</ul>
-
-</nav>
-
-
+    </div>
 
 </div>
 
-</header> 
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="#" class="logo">
+            R HILL FARM
+        </a>
+
+
+        <!-- Mobile Menu Button -->
+
+        <button
+            class="menu-toggle"
+            aria-label="メニューを開く"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="#">HOME</a>
+                </li>
+
+                <li>
+                    <a href="#company">COMPANY</a>
+                </li>
+
+                <li>
+                    <a href="#service">SERVICE</a>
+                </li>
+
+                <li>
+                    <a href="#contact">CONTACT</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
 <!--  アルバムボタン 
 <div class="album-button">
     <a href="album.html">R HILL FARM 業務風景アルバムはこちら</a>
@@ -183,7 +223,9 @@ VIEW MORE →
 <div class="card fade-up delay2">
 
 <div class="card-icon">
-<img src="icons/service.svg" alt="IT Outsourcing">
+<img src="icons/service.svg" 
+     alt="IT Outsourcing"
+     class="parallax-image">
 </div>
 
 

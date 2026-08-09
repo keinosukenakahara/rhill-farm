@@ -1439,6 +1439,51 @@ footer{
     transition-delay:.4s;
 }
 
+/* =========================================
+   Phase4-4：Final Responsive Safety
+========================================= */
+
+/* -----------------------------------------
+   Global
+----------------------------------------- */
+
+html{
+
+    overflow-x:hidden;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+/* -----------------------------------------
+   Images
+----------------------------------------- */
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+/* -----------------------------------------
+   Sections
+----------------------------------------- */
+
+section{
+
+    position:relative;
+
+}
+
+
 
 /* ====================================================================================================
    スマホ対応
@@ -1447,12 +1492,15 @@ footer{
 @media (max-width:768px){
 
     .hero{
+
+        min-height:88vh;
+        padding:80px 20px 60px;
         background-attachment:scroll;
+    }
 
-        .agri-logo{
+    .agri-logo{
 
-            width:140px;
-        }
+       width:90px;
     }
 
     .hero-title{
@@ -1464,8 +1512,97 @@ footer{
     }
 
     .hero-buttons{
+        display:flex;
         flex-direction:column;
         align-items:center;
+        gap:14px;
+        margin-top:28px;
+    }
+
+    /* ==========================   Agriculture & Logo  ========================== */
+    .hero-agri{
+
+        position:absolute;
+
+        top:70px;
+
+        left:18px;
+
+        z-index:5;
+
+    }
+
+    .hero-catch{
+
+        font-size:24px;
+
+    }
+
+    /* ==========================  Hero Content ========================== */
+    .hero-content{
+        width:100%;
+        max-width:520px;
+        padding:0 10px;
+    }
+
+    /* ==========================   Hero Title  ========================== */
+    .hero h1{
+
+        font-size:clamp(
+            32px,
+            9vw,
+            48px
+        );
+
+        line-height:1.15;
+
+        letter-spacing:.04em;
+
+    }
+
+    /* ==========================   Hero Text   ========================== */
+
+    .hero p{
+
+        font-size:15px;
+
+        line-height:1.9;
+
+        margin-top:20px;
+
+    }
+
+
+    /* ==========================   Hero Buttons   ========================== */
+
+    .hero-buttons{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:14px;
+
+        margin-top:28px;
+
+    }
+
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary{
+
+        width:min(280px, 100%);
+
+        min-height:52px;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
     }
 
     .btn-primary,
@@ -1473,6 +1610,96 @@ footer{
         width:280px;
         text-align:center;
     }
+
+
+
+    /* ==========================
+    Header
+    ========================== */
+
+    header{
+
+        height:64px;
+
+        padding:0 18px;
+
+    }
+
+
+    /* ==========================
+    Header Inner
+    ========================== */
+
+    header .container{
+
+        width:100%;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+    }
+
+
+    /* ==========================
+    Logo
+    ========================== */
+
+    header .logo{
+
+        max-width:150px;
+
+        height:auto;
+
+    }
+
+
+    /* ==========================
+    Navigation
+    ========================== */
+
+    header nav ul{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:14px;
+
+    }
+
+
+    header nav a{
+
+        font-size:12px;
+
+        letter-spacing:.04em;
+
+    }
+
+
+    /* ==========================
+    Scrolled Header
+    ========================== */
+
+    header.scrolled{
+
+        height:58px;
+
+        box-shadow:
+            0 4px 18px rgba(0,0,0,.12);
+
+    }
+
+
+    header.scrolled .logo{
+
+        max-width:135px;
+
+    }
+    
 
     .header-inner{
         flex-direction:column;
@@ -1485,26 +1712,7 @@ footer{
         gap:15px;
     }
 
-    .hero-agri{
-
-        position:absolute;
-
-        top:40px;
-
-        left:40px;
-
-        z-index:5;
-
-    }
-
-    .agri-logo{
-
-        width:130px;
-
-        display:block;
-
-    }
-
+ 
     .agri-logo:hover{
 
         transform:scale(1.05);
@@ -1642,12 +1850,6 @@ footer{
 
     .grid{flex-direction:column}
 
-    .hero-catch{
-
-        font-size:24px;
-
-    }
-
     .company-table th,
     .company-table td{
 
@@ -1677,8 +1879,418 @@ footer{
 
     }
 
+
+    header{
+
+        height:64px;
+
+    }
+
+
+    .header-inner{
+
+        height:100%;
+
+        padding:0 18px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+    }
+
+
+    /* ==========================
+    Logo
+    ========================== */
+
+    .logo{
+
+        font-size:18px;
+
+        letter-spacing:.08em;
+
+    }
+
+
+    /* ==========================
+    Menu Button
+    ========================== */
+
+    .menu-toggle{
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:5px;
+
+        width:44px;
+
+        height:44px;
+
+        padding:0;
+
+        border:0;
+
+        background:transparent;
+
+        cursor:pointer;
+
+        z-index:1001;
+
+    }
+
+
+    .menu-toggle span{
+
+        display:block;
+
+        width:24px;
+
+        height:2px;
+
+        background:#c8a96a;
+
+        border-radius:2px;
+
+        transition:
+            transform .3s ease,
+            opacity .3s ease;
+
+    }
+
+
+    /* ==========================
+    Navigation
+    ========================== */
+
+    header nav{
+
+        position:fixed;
+
+        top:64px;
+
+        right:0;
+
+        width:100%;
+
+        padding:30px 20px;
+
+        background:rgba(11,61,46,.97);
+
+        backdrop-filter:blur(12px);
+
+        -webkit-backdrop-filter:blur(12px);
+
+        transform:translateY(-120%);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transition:
+            transform .35s ease,
+            opacity .35s ease,
+            visibility .35s ease;
+
+        z-index:1000;
+
+    }
+
+
+    header nav ul{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:0;
+
+        margin:0;
+
+        padding:0;
+
+        list-style:none;
+
+    }
+
+
+    header nav li{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
+    header nav a{
+
+        display:block;
+
+        padding:17px 10px;
+
+        font-size:14px;
+
+        letter-spacing:.12em;
+
+    }
+
+
+    /* ==========================
+    Menu Open
+    ========================== */
+
+    header.menu-open nav{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+        visibility:visible;
+
+    }
+
+
+    /* ==========================
+    Hamburger → X
+    ========================== */
+
+    header.menu-open .menu-toggle span:nth-child(1){
+
+        transform:
+            translateY(7px)
+            rotate(45deg);
+
+    }
+
+
+    header.menu-open .menu-toggle span:nth-child(2){
+
+        opacity:0;
+
+    }
+
+
+    header.menu-open .menu-toggle span:nth-child(3){
+
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+
+    }
+
+
+    /* =========================================
+        Phase4-3：Wave Smartphone Optimization
+    ========================================= */
+
+    /* -----------------------------------------
+       Wave base height
+    ----------------------------------------- */
+
+    .wave-top::before,
+    .wave-bottom::after{
+
+        height:55px;
+
+    }
+
+
+    /* -----------------------------------------
+       Wave position
+    ----------------------------------------- */
+
+    .wave-top::before{
+
+        top:-1px;
+
+    }
+
+
+    .wave-bottom::after{
+
+        bottom:-1px;
+
+    }
+
+
+    /* -----------------------------------------
+       Wave content protection
+    ----------------------------------------- */
+
+    .wave-top{
+
+        padding-top:70px;
+
+    }
+
+
+    .wave-bottom{
+
+        padding-bottom:70px;
+
+    }
+
+    /* -----------------------------------------
+       Prevent content from being hidden
+    ----------------------------------------- */
+
+    .wave-top > *,
+    .wave-bottom > *{
+
+        position:relative;
+
+        z-index:1;
+
+    }
+
+
+    /* -----------------------------------------
+       Prevent horizontal overflow
+    ----------------------------------------- */
+
+    .section-light,
+    .section-green,
+    .section-dark{
+
+        overflow:hidden;
+
+    }
+
+
+    /* -----------------------------------------
+       Prevent horizontal overflow
+    ----------------------------------------- */
+
+    .section-light,
+    .section-green,
+    .section-dark{
+
+        overflow:hidden;
+
+    }
+
+
+    /* Container */
+
+    .container{
+
+        width:100%;
+
+        max-width:100%;
+
+        padding-left:20px;
+
+        padding-right:20px;
+
+        box-sizing:border-box;
+
+    }
+
+
+    /* Headings */
+
+    h1{
+
+        font-size:clamp(2rem,8vw,3rem);
+
+        line-height:1.2;
+
+    }
+
+    h2{
+
+        font-size:clamp(1.7rem,7vw,2.4rem);
+
+        line-height:1.25;
+
+    }
+
+    h3{
+
+        font-size:clamp(1.2rem,5vw,1.6rem);
+
+        line-height:1.4;
+
+    }
+
+
+    /* Text */
+
+    p{
+
+        line-height:1.8;
+
+    }
+
+
+    /* Buttons */
+
+    .btn-primary,
+    .btn-secondary{
+
+        max-width:100%;
+
+        box-sizing:border-box;
+
+    }
+
+
+    /* Cards */
+
+    .card{
+
+        max-width:100%;
+
+        box-sizing:border-box;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
-/* ==========================　スマホ　========================== */
+
+/* ====================================================　スマホ　==================================================== */
+/* ====================================================　スマホ　==================================================== */
+/* ====================================================　スマホ　==================================================== */
+
+
+
+
+/* ==================================================
+Phase4-2
+Mobile Header
+================================================== */
+
+/* ==========================
+Menu Button
+========================== */
+
+.menu-toggle{
+
+display:none;
+
+}
+
+
 
 /* ==========================
    Button Animation
@@ -1819,14 +2431,69 @@ footer{
 .section-dark{
 
     position:relative;
+    padding:100px 20px;
 
 }
 
+/* ==========================
+Phase3-4-③
+Wave Divider - Final
+========================== */
+
+.section-light.wave-top,
+.section-green.wave-top,
+.section-dark.wave-top{
+
+position:relative;
+
+}
+
+/* ==========================
+Wave Shape
+========================== */
+
+.section-light.wave-top::before,
+.section-green.wave-top::before,
+.section-dark.wave-top::before{
+
+content:"";
+
+position:absolute;
+
+top:-1px;
+left:-5%;
+
+width:110%;
+height:90px;
+
+background:inherit;
+
+border-radius:0 0 50% 50% / 0 0 100% 100%;
+
+transform:translateY(-45px);
+
+z-index:0;
+
+}
+
+/* ==========================
+Content Layer
+========================== */
+
+.section-light.wave-top > *,
+.section-green.wave-top > *,
+.section-dark.wave-top > *{
+
+position:relative;
+
+z-index:1;
+
+}
 
 /* ==========================
    Wave Top
 ========================== */
-
+/* ==========================
 .section-light.wave-top::before,
 .section-green.wave-top::before,
 .section-dark.wave-top::before{
@@ -1848,7 +2515,7 @@ footer{
     z-index:0;
 
 }
-
+========================== */
 
 /* ==========================
    Content Layer
@@ -1865,6 +2532,17 @@ footer{
 }
 
 /* ==========================
+   Service Content
+========================== */
+
+#service > *{
+
+    position:relative;
+    z-index:1;
+
+}
+
+/* ==========================
    Phase3-4-④
    Parallax-like Effect
 ========================== */
@@ -1876,5 +2554,154 @@ footer{
     transition:transform .15s linear;
 
     will-change:transform;
+
+}
+
+
+/* ==========================
+   Phase3-4-⑤
+   Loading Animation
+========================== */
+
+#page-loader{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#0b3d2e;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
+}
+
+
+/* --------------------------
+   Loader Hide
+-------------------------- */
+
+#page-loader.loaded{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+/* --------------------------
+   Loader Content
+-------------------------- */
+
+.loader-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:24px;
+
+}
+
+
+/* --------------------------
+   Logo
+-------------------------- */
+
+.loader-logo{
+
+    width:180px;
+
+    max-width:60vw;
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    animation:
+        loaderLogo .9s ease forwards;
+
+}
+
+
+/* --------------------------
+   Loading Line
+-------------------------- */
+
+.loader-line{
+
+    width:0;
+
+    height:2px;
+
+    background:#c8a96a;
+
+    animation:
+        loaderLine 1.2s ease forwards;
+
+    animation-delay:.3s;
+
+}
+
+
+/* --------------------------
+   Logo Animation
+-------------------------- */
+
+@keyframes loaderLogo{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* --------------------------
+   Line Animation
+-------------------------- */
+
+@keyframes loaderLine{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:180px;
+
+    }
 
 }
