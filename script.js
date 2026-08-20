@@ -24,47 +24,6 @@ window.addEventListener("scroll", function () {
 
 
 /* ==========================
-   Scroll Animation Ver3.0
-========================== */
-
-const animatedElements =
-    document.querySelectorAll(
-        ".fade-up, .fade-left, .fade-right"
-    );
-
-
-const fadeObserver =
-    new IntersectionObserver((entries, observer) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-                /* 一度表示したら監視終了 */
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    }, {
-
-        threshold:0.15
-
-    });
-
-
-animatedElements.forEach(element => {
-
-    fadeObserver.observe(element);
-
-});
-
-
-/* ==========================
    Phase3-4-④
    Parallax-like Scroll
 ========================== */
@@ -152,6 +111,166 @@ window.addEventListener(
 
 
 updateParallax();
+
+
+
+
+/* ========================================
+   Phase5-2 / Phase5-3
+   Wave + Scroll Animation Final
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* ========================================
+//        Phase5-3
+//        Fade Up Scroll Animation
+//     ========================================= */
+
+    const fadeElements =
+        document.querySelectorAll(".fade-up");
+
+
+    if (fadeElements.length) {
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+
+                        entry.target.classList.add("show");
+
+
+                        /* 一度表示したら監視終了 */
+                        observer.unobserve(entry.target);
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12,
+
+                    rootMargin:
+                        "0px 0px -40px 0px"
+                }
+
+            );
+
+
+        fadeElements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+    }
+
+
+    /* =========================================
+       Phase5-2
+       Wave Scroll Animation Final
+    ========================================= */
+
+    const waveSections =
+        document.querySelectorAll(".wave-top");
+
+
+    if (waveSections.length) {
+
+
+        function updateWaveScroll() {
+
+            const scrollAmount =
+                window.scrollY;
+
+
+            waveSections.forEach((section) => {
+
+
+                /*
+                 * Wave 上下移動
+                 */
+                const waveY =
+                    Math.sin(
+                        scrollAmount * 0.01
+                    ) * 12;
+
+
+                /*
+                 * Wave 左右移動
+                 */
+                const waveX =
+                    Math.sin(
+                        scrollAmount * 0.008
+                    ) * 8;
+
+
+                /*
+                 * CSS変数として渡す
+                 */
+                section.style.setProperty(
+                    "--wave-y",
+                    `${waveY}px`
+                );
+
+
+                section.style.setProperty(
+                    "--wave-x",
+                    `${waveX}px`
+                );
+
+            });
+
+        }
+
+
+        /*
+         * スクロール時にWaveを更新
+         */
+        window.addEventListener(
+            "scroll",
+            updateWaveScroll,
+            {
+                passive: true
+            }
+        );
+
+
+        /*
+         * 画面サイズ変更時
+         */
+        window.addEventListener(
+            "resize",
+            updateWaveScroll
+        );
+
+
+        /*
+         * 初期状態
+         */
+        updateWaveScroll();
+
+    }
+
+});
+
+
+
+
+
+
+
+
+
 
 
 /* ==========================

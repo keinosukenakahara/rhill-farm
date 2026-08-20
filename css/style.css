@@ -1,4 +1,4 @@
-//* =====================================================
+/* =====================================================
    R HILL FARM Official Website Ver2.0
    style.css
    Last Update : 2026-08-05
@@ -59,44 +59,6 @@ ul{
 html{
     scroll-behavior:smooth;
 }
-
-
-html{
-
-    scroll-behavior:smooth;
-
-}
-
-img{
-
-    max-width:100%;
-
-    height:auto;
-
-    display:block;
-
-}
-
-a{
-
-    text-decoration:none;
-
-}
-
-ul{
-
-    margin:0;
-
-    padding:0;
-
-}
-
-li{
-
-    list-style:none;
-
-}
-
 
 
 body{
@@ -318,7 +280,7 @@ nav a.active::after{
 
     transform:scale(1);
 
-    animation:heroZoom 18s ease-in-out infinite alternate;animation:heroZoom 20s ease-in-out infinite alternate;
+    animation:heroZoom 20s ease-in-out infinite alternate;
     z-index:0;
 
 }
@@ -722,10 +684,15 @@ margin:0 auto 40px;
 
 }
 
-.section h2{
-    border-left:5px solid var(--main);
-    padding-left:10px;
-    margin-bottom:30px;
+.section h2 {
+    border-left: 5px solid var(--main);
+    padding-left: 10px;
+
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111827;
 }
 
 .section-title{
@@ -820,10 +787,11 @@ margin:0 auto 40px;
 
 }
 
-/* ==========================
-   Ver3.0 Card Design
-========================== */
 
+/* ==========================
+   Ver3.0 Card Design Final
+========================== */
+/* #############################
 .card{
 
     position:relative;
@@ -834,107 +802,113 @@ margin:0 auto 40px;
     align-items:center;
     text-align:center;
 
+    height:100%;
+
     padding:40px 32px;
 
-    border-radius:22px;
+    background: rgba(255, 255, 255, 0.16);
 
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.05)
-    );
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-    background:
-        rgba(255,255,255,.92);
-
-    border:1px solid rgba(200,169,106,.25);
 
     backdrop-filter:blur(12px);
-
     -webkit-backdrop-filter:blur(12px);
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.08);
+    overflow:hidden;
 
     transition:
         transform .35s ease,
         box-shadow .35s ease,
         border-color .35s ease;
-
-    overflow:hidden;
-
-    height:100%;
 }
 
-.card:hover{
-
-    transform:
-    translateY(-10px)
-    scale(1.02);
-
-    border-color:rgba(200,169,106,.65);
-
-    box-shadow:
-
-        0 20px 45px rgba(0,0,0,.25);
-
-    box-shadow:
-
-        0 28px 60px rgba(0,0,0,.28);
-
-}
-
-.card h3{
-
-    font-size:24px;
-
-    font-weight:700;
-
-    letter-spacing:.08em;
-
-    color:#0b3d2e;
-
-    margin-bottom:18px;
-
-}
-
-
-.card p{
-
-    color:#555;
-
-    line-height:1.9;
-
-    font-size:15px;
-
-    margin-bottom:30px;
-
-}
-
+/* ==========================
+   Card Icon / Image
+========================== */
+/*
 .card img{
 
     width:72px;
-
     height:72px;
 
     margin-bottom:24px;
 
-    transition:.35s;
+    display:block;
+
+    transition:
+        transform .35s ease;
 }
+*/
 
-.card:hover img{
+/* ==========================
+   Card Title
+========================== */
 
-    transform:scale(1.08);
+/* ORIGINAL
+.card h3{
+
+    font-size:24px;
+    
+    font-weight:700;
+    letter-spacing:.04em;
+
+    color:#0b3d2e;
+
+    margin-bottom:15px;
 }
+*/
 
 
+/* SAMPLE 
+
+.card h3{
+
+    color:#555;
+    font-size:24px;
+
+    font-weight: 400;
+    line-height: 1.8;
+     
+    color:#0b3d2e;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.38),
+        0 6px 14px rgba(0, 0, 0, 0.22);
+
+    border: 1px solid rgba(200, 169, 106, 0.35);
+
+}
+*/
+
+/* ==========================
+   Card Text
+========================== */
+/* ORIGINAL
+.card p{
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+*/
+
+/* ==========================
+   Card Button
+========================== */
+/*
 .card .btn{
 
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     min-width:170px;
@@ -951,21 +925,17 @@ margin:0 auto 40px;
 
     text-decoration:none;
 
-    transition:.3s;
-
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background-color .25s ease;
 }
+*/
 
-.card .btn:hover{
-
-    background:#d8b97a;
-
-    transform:translateY(-2px);
-
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-
-}
-
-
+/* ==========================
+   Card Gold Line
+========================== */
+/*
 .card::before{
 
     content:"";
@@ -973,20 +943,843 @@ margin:0 auto 40px;
     position:absolute;
 
     top:0;
-
     left:0;
 
     width:100%;
-
     height:4px;
 
-    background:linear-gradient(
-        90deg,
-        #c8a96a,
-        #e8d39c
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #c8a96a,
+            #e8d39c
+        );
+}
+
+*/
+/* ==============================================================================*/
+/* ==============================================================================*/
+/* ==============================================================================*/
+
+
+
+
+
+
+/* ==========================
+   Ver3.0 Card Design ④
+   Step 2：立体感強化版
+==========================  TEST TEST TEST TEST TEST
+
+.card {
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    height: 100%;
+
+    padding: 40px 32px;
+
+
+    /* ==========================
+       Glass Base
+    ========================== 
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.32),
+            rgba(255,255,255,0.12)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.55);
+
+    border-radius: 26px;
+
+    /* ==========================
+       Deep 3D Shadow
+    ========================== 
+        box-shadow:
+
+        0 28px 55px rgba(0,0,0,0.20),
+
+        0 10px 20px rgba(0,0,0,0.12),
+
+        inset 0 1px 0 rgba(255,255,255,0.75),
+
+        inset 0 -1px 0 rgba(0,0,0,0.04);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* ==========================
+   Gold Top Line
+========================== 
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b99755,
+            #e8d39c,
+            #c8a96a,
+            #f0dda8,
+            #b99755
+        );
+
+    box-shadow:
+        0 2px 8px rgba(200,169,106,0.45);
+
+    z-index: 3;
+}
+
+
+/* ==========================
+   Large Background Shape
+========================== 
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(200,169,106,0.28) 0%,
+            rgba(200,169,106,0.12) 45%,
+            rgba(200,169,106,0) 72%
+        );
+
+    z-index: 0;
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease;
+}
+
+
+/* ==========================
+   Inner Light Reflection
+========================== 
+
+.card > * {
+
+    position: relative;
+
+    z-index: 2;
 
 }
+
+
+/* ==========================
+   Card Icon
+========================== 
+
+.card img {
+
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 24px;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 8px 12px rgba(0,0,0,0.12)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* ==========================
+   Card Heading
+========================== 
+
+.card h3 {
+
+    color: #0b3d2e;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 1px 1px rgba(255,255,255,0.5);
+}
+
+
+/* ==========================
+   Card Text
+========================== 
+
+.card p {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* ==========================
+   Card Button
+========================== 
+
+.card .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 14px 26px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c8a96a,
+            #dfc584
+        );
+
+    color: #fff;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,0.16),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* ==========================
+   PC Hover
+========================== 
+
+@media (hover:hover) and (pointer:fine) {
+
+
+    .card:hover {
+
+        transform:
+            translateY(-10px)
+            scale(1.01);
+
+        border-color:
+            rgba(200,169,106,0.75);
+
+        box-shadow:
+
+            0 36px 70px rgba(0,0,0,0.25),
+
+            0 14px 28px rgba(0,0,0,0.14),
+
+            inset 0 1px 0
+            rgba(255,255,255,0.85);
+    }
+
+
+    .card:hover::after {
+
+        transform:
+            scale(1.35)
+            rotate(12deg);
+
+        opacity: 1;
+    }
+
+
+    .card:hover img {
+
+        transform:
+            scale(1.08)
+            translateY(-3px);
+
+        filter:
+            drop-shadow(
+                0 12px 18px rgba(0,0,0,0.18)
+            );
+    }
+
+
+    .card .btn:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+
+            0 12px 24px rgba(0,0,0,0.22),
+
+            inset 0 1px 0
+            rgba(255,255,255,0.45);
+    }
+
+}
+
+
+/* ==========================
+   Mobile / Touch
+========================== 
+
+@media (hover:none) {
+
+    .card .btn:active {
+
+        transform:
+            scale(0.97);
+
+    }
+
+}
+
+TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST  */ 
+
+
+
+/* =========================================
+   Card Design ④
+   Step 4：3D + Bold Shape
+========================================= */
+
+
+/* =========================================
+   Card Base
+========================================= */
+
+.card {
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    height: 100%;
+
+    padding: 40px 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.38),
+            rgba(255,255,255,0.14)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.65);
+
+    border-radius: 28px;
+
+    /* 強化された立体感 */
+
+    box-shadow:
+
+        0 32px 65px
+        rgba(0,0,0,0.22),
+
+        0 12px 26px
+        rgba(0,0,0,0.13),
+
+        0 3px 8px
+        rgba(0,0,0,0.08),
+
+        inset 0 2px 0
+        rgba(255,255,255,0.85),
+
+        inset 0 -2px 0
+        rgba(0,0,0,0.05);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+
+/* =========================================
+   Gold Top Line
+========================================= */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a98642,
+            #e8d39c,
+            #fff0bd,
+            #c8a96a,
+            #a98642
+        );
+
+    box-shadow:
+        0 3px 12px
+        rgba(200,169,106,0.55);
+
+    z-index: 4;
+}
+
+
+/* =========================================
+   Card Content
+========================================= */
+
+.card > * {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
+/* =========================================
+   IT Outsourcing
+   Green + Large Circle
+========================================= */
+
+.card-grid .card:nth-child(1) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(230,247,239,0.82),
+            rgba(255,255,255,0.18)
+        );
+
+    border-color:
+        rgba(11,61,46,0.22);
+
+}
+
+
+.card-grid .card:nth-child(1)::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    right: -150px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(11,61,46,0.30) 0%,
+            rgba(11,61,46,0.16) 38%,
+            rgba(11,61,46,0.06) 58%,
+            transparent 76%
+        );
+
+    z-index: 1;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+/* =========================================
+   Infrastructure
+   Blue + Bold Diagonal Shape
+========================================= */
+
+.card-grid .card:nth-child(2) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(232,244,253,0.84),
+            rgba(255,255,255,0.18)
+        );
+
+    border-color:
+        rgba(60,120,165,0.24);
+
+}
+
+
+.card-grid .card:nth-child(2)::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 390px;
+    height: 230px;
+
+    right: -150px;
+    top: -80px;
+
+    border-radius:
+        55% 45% 65% 35%
+        /
+        45% 55% 45% 55%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(55,125,175,0.28),
+            rgba(75,145,190,0.14),
+            rgba(75,145,190,0)
+        );
+
+    transform:
+        rotate(-18deg);
+
+    z-index: 1;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+/* =========================================
+   Works
+   Gold + Organic Shape
+========================================= */
+
+.section-green .card-grid .card:nth-child(1) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(252,247,232,0.86),
+            rgba(255,255,255,0.18)
+        );
+
+    border-color:
+        rgba(200,169,106,0.34);
+}       
+
+
+.section-green .card-grid .card:nth-child(1)::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -145px;
+    top: -145px;
+
+    border-radius:
+        60% 40% 68% 32%
+        /
+        38% 62% 40% 60%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(200,169,106,0.34) 0%,
+            rgba(200,169,106,0.17) 38%,
+            rgba(200,169,106,0.06) 58%,
+            transparent 76%
+        );
+
+    transform:
+        rotate(18deg);
+
+    z-index: 1;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+/* =========================================
+   Icon
+========================================= */
+
+.card img {
+
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 24px;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 10px 14px
+            rgba(0,0,0,0.16)
+        );
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+
+/* =========================================
+   Heading
+========================================= */
+
+.card h3 {
+
+    color: #0b3d2e;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 1px 2px
+        rgba(255,255,255,0.65);
+}
+
+
+/* =========================================
+   Button
+========================================= */
+
+.card .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 14px 26px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b99755,
+            #dfc584,
+            #c8a96a
+        );
+
+    color: #fff;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+
+        0 8px 18px
+        rgba(0,0,0,0.18),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.45);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================
+   PC Hover
+========================================= */
+
+@media (hover:hover) and (pointer:fine) {
+
+
+    .card:hover {
+
+        transform:
+            translateY(-12px)
+            scale(1.015);
+
+        border-color:
+            rgba(200,169,106,0.85);
+
+        box-shadow:
+
+            0 42px 80px
+            rgba(0,0,0,0.28),
+
+            0 16px 32px
+            rgba(0,0,0,0.16),
+
+            0 4px 10px
+            rgba(0,0,0,0.08),
+
+            inset 0 2px 0
+            rgba(255,255,255,0.9);
+    }
+
+
+    .card:hover img {
+
+        transform:
+            scale(1.09)
+            translateY(-4px);
+
+        filter:
+            drop-shadow(
+                0 14px 20px
+                rgba(0,0,0,0.22)
+            );
+    }
+
+
+    /* IT Outsourcing */
+
+    .card-grid .card:nth-child(1):hover::after {
+
+        transform:
+            scale(1.18)
+            translate(-20px,20px);
+    }
+
+
+    /* Infrastructure */
+
+    .card-grid .card:nth-child(2):hover::after {
+
+        transform:
+            scale(1.12)
+            rotate(-12deg)
+            translate(-20px,15px);
+    }
+
+
+    /* Works */
+
+    .section-green
+    .card-grid
+    .card:nth-child(1):hover::after {
+
+        transform:
+            scale(1.18)
+            rotate(28deg)
+            translate(-18px,18px);
+    }
+
+
+    /* Button */
+
+    .card .btn:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+
+            0 14px 28px
+            rgba(0,0,0,0.24),
+
+            inset 0 1px 0
+            rgba(255,255,255,0.55);
+    }
+
+}
+
+
+/* =========================================
+   Mobile / Touch
+========================================= */
+
+@media (hover:none) {
+
+    .card .btn:active {
+
+        transform:
+            scale(0.97);
+
+    }
+
+}
+/* TEST   */ 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1002,11 +1795,17 @@ margin:0 auto 40px;
 
 }
 
-.service-card:hover{
+@media (hover:hover) and (pointer:fine){
 
-    transform:
-    translateY(-10px)
-    scale(1.02);
+    .service-card:hover{
+
+        transform:translateY(-8px);
+
+        box-shadow:
+            0 18px 40px rgba(0,0,0,.18);
+
+    }
+
 }
 
 .service-icon{
@@ -1062,15 +1861,6 @@ margin:0 auto 40px;
     background:var(--accent);
 
 }
-
-.service-card:hover{
-
-    box-shadow:
-
-        0 20px 50px rgba(0,0,0,.15);
-
-}
-
 
 
 /* VOICE */
@@ -1223,20 +2013,6 @@ footer{
     text-shadow:
         0 1px 3px rgba(0,0,0,.45);
 
-
-}
-
-
-.btn-primary,
-.btn-secondary{
-
-    position:relative;
-
-    overflow:hidden;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
 
 }
 
@@ -1407,19 +2183,6 @@ footer{
 /* ==========================
    Scroll Animation Ver3.0
 ========================== */
-
-.fade-up{
-    opacity:0;
-    transform:translateY(60px);
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.fade-up.show{
-    opacity:1;
-    transform:translateY(0);
-}
 
 /* 少しずつ時間差 */
 
@@ -1753,7 +2516,7 @@ section{
 
     }
 
-        .scroll-guide{
+    .scroll-guide{
 
         bottom:18px;
 
@@ -2093,58 +2856,38 @@ section{
     /* =========================================
         Phase4-3：Wave Smartphone Optimization
     ========================================= */
-
     /* -----------------------------------------
-       Wave base height
-    ----------------------------------------- */
-
-    .wave-top::before,
-    .wave-bottom::after{
-
-        height:55px;
-
-    }
-
-
-    /* -----------------------------------------
-       Wave position
+       Wave base height(@media (max-width:768px)
     ----------------------------------------- */
 
     .wave-top::before{
 
-        top:-1px;
+    top:-1px;
+
+    transform:
+        translate3d(
+            var(--wave-x, 0px),
+            calc(
+                -27px + var(--wave-y, 0px)
+            ),
+            0
+        );
 
     }
 
 
     .wave-bottom::after{
+
+        height:55px;
 
         bottom:-1px;
 
     }
 
 
-    /* -----------------------------------------
-       Wave content protection
-    ----------------------------------------- */
-
-    .wave-top{
-
-        padding-top:70px;
-
-    }
-
-
-    .wave-bottom{
-
-        padding-bottom:70px;
-
-    }
-
-    /* -----------------------------------------
-       Prevent content from being hidden
-    ----------------------------------------- */
-
+    /*
+       Waveよりコンテンツを前面へ
+    */
     .wave-top > *,
     .wave-bottom > *{
 
@@ -2167,20 +2910,7 @@ section{
 
     }
 
-
-    /* -----------------------------------------
-       Prevent horizontal overflow
-    ----------------------------------------- */
-
-    .section-light,
-    .section-green,
-    .section-dark{
-
-        overflow:hidden;
-
-    }
-
-
+    
     /* Container */
 
     .container{
@@ -2303,13 +3033,6 @@ display:none;
         background .3s ease;
 }
 
-.card:hover .btn{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 8px 24px rgba(0,0,0,.18);
-
-}
 
 /* =========================
    Phase3 Section Background
@@ -2353,6 +3076,71 @@ display:none;
     color:white;
 
 }
+
+
+/* =========================================
+   WORKS Section
+   Works Card
+========================================= */
+/* DELETE !!!!!!
+.section-green .card-grid .card:nth-child(1) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(252,248,237,0.78),
+            rgba(255,255,255,0.16)
+        );
+
+    border-color:
+        rgba(200,169,106,0.28);
+
+}
+
+
+.section-green .card-grid .card:nth-child(1)::after {
+
+    width:260px;
+    height:260px;
+
+    right:-105px;
+    top:-105px;
+
+    border-radius:
+        58% 42% 65% 35%
+        /
+        42% 58% 42% 58%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(200,169,106,0.30) 0%,
+            rgba(200,169,106,0.12) 45%,
+            rgba(200,169,106,0) 72%
+        );
+
+    transform:
+        rotate(18deg);
+
+}
+
+
+@media (hover:hover) and (pointer:fine) {
+
+    .section-green
+    .card-grid
+    .card:nth-child(1):hover::after {
+
+        transform:
+            scale(1.25)
+            rotate(28deg)
+            translate(-6px, 6px);
+
+    }
+
+}
+*/
+
 
 /* ==========================
    Phase3 Scroll Animation
@@ -2435,112 +3223,258 @@ display:none;
 
 }
 
-/* ==========================
-Phase3-4-③
-Wave Divider - Final
-========================== */
+
+
+
+/* =========================================
+   Phase3-4-③
+   Wave Divider - Final
+========================================= */
 
 .section-light.wave-top,
 .section-green.wave-top,
-.section-dark.wave-top{
+.section-dark.wave-top {
 
-position:relative;
+    position: relative;
 
 }
 
-/* ==========================
-Wave Shape
-========================== */
+
+/* =========================================
+   Wave Shape
+========================================= */
 
 .section-light.wave-top::before,
 .section-green.wave-top::before,
-.section-dark.wave-top::before{
+.section-dark.wave-top::before {
 
-content:"";
+    content: "";
 
-position:absolute;
+    position: absolute;
 
-top:-1px;
-left:-5%;
+    top: -1px;
+    left: -5%;
 
-width:110%;
-height:90px;
+    width: 110%;
+    height: 90px;
 
-background:inherit;
+    /*
+       Waveの基本色
+    */
 
-border-radius:0 0 50% 50% / 0 0 100% 100%;
+    background: inherit;
 
-transform:translateY(-45px);
+    border-radius:
+        0 0 50% 50%
+        /
+        0 0 100% 100%;
 
-z-index:0;
+        /* wave timer */
+        animation:
+        waveMorph 3s ease-in-out infinite alternate;
+
+
+    /*
+       スクロールによるWave移動
+    */
+
+    transform:
+        translate3d(
+            var(--wave-x, 0px),
+            calc(
+                -45px + var(--wave-y, 0px)
+            ),
+            0
+        );
+
+
+    /*
+       GPUによる滑らかな描画
+    */
+
+    will-change: transform;
+
+    /*
+       コンテンツより後ろ
+       ただしsection背景より上
+    */
+
+    z-index: 0;
+
+    pointer-events: none;
 
 }
 
-/* ==========================
-Content Layer
-========================== */
+/* =========================================
+   Wave Shape Animation　（１倍）
+========================================= */
+/* #############
+@keyframes waveMorph {
+
+    0% {
+
+        border-radius:
+            0 0 50% 50%
+            /
+            0 0 100% 100%;
+
+    }
+
+    50% {
+
+        border-radius:
+            0 0 65% 35%
+            /
+            0 0 80% 120%;
+    }
+
+    100% {
+
+        border-radius:
+            0 0 40% 60%
+            /
+            0 0 120% 80%;
+    }
+
+}
+*/
+
+/* =========================================
+   Wave Shape Animation　（２倍）
+========================================= */
+/* #############
+@keyframes waveMorph {
+
+    0% {
+
+        border-radius:
+            0 0 50% 50%
+            /
+            0 0 100% 100%;
+    }
+
+    50% {
+
+        border-radius:
+            0 0 80% 20%
+            /
+            0 0 60% 140%;
+
+    }
+
+    100% {
+
+        border-radius:
+            0 0 20% 80%
+            /
+            0 0 140% 60%;
+
+    }
+
+}
+*/
+
+/* =========================================
+   Wave Shape Animation
+   変化量 3倍版
+========================================= */
+/* ############
+
+@keyframes waveMorph {
+
+    0% {
+
+        border-radius:
+            0 0 50% 50%
+            /
+            0 0 100% 100%;
+    }
+
+    50% {
+
+        border-radius:
+            0 0 90% 10%
+            /
+            0 0 40% 160%;
+    }
+
+    100% {
+
+        border-radius:
+            0 0 10% 90%
+            /
+            0 0 160% 40%;
+    }
+}
+*/
+
+/* =========================================
+   Wave Shape Animation
+   メリハリ調整版
+========================================= */
+
+@keyframes waveMorph {
+
+    0% {
+
+        border-radius:
+            0 0 50% 50%
+            /
+            0 0 100% 100%;
+    }
+
+    50% {
+
+        border-radius:
+            0 0 100% 0%
+            /
+            0 0 30% 170%;
+    }
+
+    100% {
+
+        border-radius:
+            0 0 50% 50%
+            /
+            0 0 100% 100%;
+    }
+}
+
+/* =========================================
+   Wave Color
+========================================= */
+
+.section-light.wave-top::before {
+
+    background:
+        rgba(11, 61, 46, 0.85);
+
+}
+
+
+.section-green.wave-top::before {
+
+    background:
+        rgba(200, 169, 106, 0.75);
+
+}
+
+
+/* =========================================
+   Section Content
+   Waveより前面に表示
+========================================= */
 
 .section-light.wave-top > *,
 .section-green.wave-top > *,
-.section-dark.wave-top > *{
+.section-dark.wave-top > * {
 
-position:relative;
+    position: relative;
 
-z-index:1;
-
-}
-
-/* ==========================
-   Wave Top
-========================== */
-/* ==========================
-.section-light.wave-top::before,
-.section-green.wave-top::before,
-.section-dark.wave-top::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-70px;
-    left:0;
-
-    width:100%;
-    height:100px;
-
-    background:inherit;
-
-    border-radius:50% 50% 0 0 / 100% 100% 0 0;
-
-    z-index:0;
-
-}
-========================== */
-
-/* ==========================
-   Content Layer
-========================== */
-
-.section-light.wave-top > *,
-.section-green.wave-top > *,
-.section-dark.wave-top > *{
-
-    position:relative;
-
-    z-index:1;
+    z-index: 1;
 
 }
 
-/* ==========================
-   Service Content
-========================== */
-
-#service > *{
-
-    position:relative;
-    z-index:1;
-
-}
 
 /* ==========================
    Phase3-4-④
@@ -2704,4 +3638,1008 @@ z-index:1;
 
     }
 
+}
+
+
+/* =========================================
+   Phase5-1：Typography & Spacing
+========================================= */
+
+
+/* -----------------------------------------
+   Typography Base
+----------------------------------------- */
+
+body{
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        "Noto Sans JP",
+        sans-serif;
+
+    line-height:1.7;
+
+    letter-spacing:0.02em;
+
+}
+
+
+/* -----------------------------------------
+   Headings
+----------------------------------------- */
+
+h1,
+h2,
+h3{
+
+    margin-top:0;
+
+    letter-spacing:0.03em;
+
+}
+
+
+/* -----------------------------------------
+   Main Heading
+----------------------------------------- */
+
+h1{
+
+    font-size:clamp(2.2rem,5vw,4rem);
+
+    line-height:1.2;
+
+    font-weight:700;
+
+}
+
+
+/* -----------------------------------------
+   Section Heading
+----------------------------------------- */
+
+h2{
+
+    font-size:clamp(1.8rem,4vw,2.8rem);
+
+    line-height:1.25;
+
+    font-weight:700;
+
+}
+
+
+/* -----------------------------------------
+   Sub Heading
+----------------------------------------- */
+
+h3{
+
+    font-size:clamp(1.2rem,2.5vw,1.6rem);
+
+    line-height:1.4;
+
+    font-weight:600;
+
+}
+
+
+/* -----------------------------------------
+   Paragraph
+----------------------------------------- */
+
+p{
+
+    margin-top:0;
+
+    margin-bottom:1.2em;
+
+    line-height:1.8;
+
+}
+
+
+/* -----------------------------------------
+   Section Spacing
+----------------------------------------- */
+
+section{
+
+    padding-top:100px;
+
+    padding-bottom:100px;
+
+}
+
+
+/* -----------------------------------------
+   Section Heading Spacing
+----------------------------------------- */
+
+section h2{
+
+    margin-bottom:40px;
+
+}
+
+
+/* -----------------------------------------
+   Mobile Typography
+----------------------------------------- */
+
+@media (max-width:768px){
+
+    body{
+
+        font-size:15px;
+
+        line-height:1.75;
+
+        letter-spacing:0.015em;
+
+    }
+
+
+    h1{
+
+        font-size:clamp(2rem,8vw,2.8rem);
+
+        line-height:1.2;
+
+    }
+
+
+    h2{
+
+        font-size:clamp(1.7rem,7vw,2.3rem);
+
+        line-height:1.25;
+
+        margin-bottom:30px;
+
+    }
+
+
+    h3{
+
+        font-size:1.25rem;
+
+        line-height:1.4;
+
+    }
+
+
+    p{
+
+        line-height:1.8;
+
+    }
+
+
+    section{
+
+        padding-top:70px;
+
+        padding-bottom:70px;
+
+    }
+
+
+    section h2{
+
+        margin-bottom:30px;
+
+    }
+
+}
+
+/* =========================================
+   Phase5-1：Wave Spacing Override
+========================================= */
+
+.wave-top{
+
+    padding-top:100px;
+
+}
+
+.wave-bottom{
+
+    padding-bottom:100px;
+
+}
+
+
+@media (max-width:768px){
+
+    .wave-top{
+
+        padding-top:70px;
+
+    }
+
+    .wave-bottom{
+
+        padding-bottom:70px;
+
+    }
+
+}
+
+/* =========================================
+   Phase5-1：Card Typography Spacing
+========================================= */
+
+.card .btn{
+
+    margin-top:10px;
+
+}
+
+/* =========================================
+   Phase5-2：Card Hover Final
+========================================= */
+.card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+/* ===========================
+    PC / Mouse device only
+============================= */
+/*
+@media (hover:hover) and (pointer:fine){
+
+    .card:hover{
+
+        transform:translateY(-8px);
+
+        border-color:rgba(200,169,106,.65);
+
+        box-shadow:
+            0 18px 40px rgba(0,0,0,.18);
+
+    }
+
+    .card:hover img{
+
+        transform:scale(1.06);
+    }
+
+}
+*/
+/* =========================================
+   Card Icon Hover
+========================================= */
+
+@media (hover:hover) and (pointer:fine){
+
+    .card:hover img,
+    .card:hover .icon{
+
+        transform:scale(1.06);
+
+    }
+
+}
+
+/* =========================================
+   Phase5-2：Button Hover Final
+========================================= */
+
+.btn-primary,
+.btn-secondary,
+.card .btn{
+
+    position:relative;
+    overflow:hidden;
+
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background-color .25s ease,
+        color .25s ease;
+
+}
+
+
+@media (hover:hover) and (pointer:fine){
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .card .btn:hover{
+
+        transform:translateY(-3px);
+
+        box-shadow:
+            0 8px 20px rgba(0,0,0,.18);
+
+    }
+
+}
+
+/* =========================================
+   Mobile / Touch Feedback
+========================================= */
+
+@media (hover:none){
+
+    .btn-primary:active,
+    .btn-secondary:active,
+    .card .btn:active{
+
+        transform:scale(.97);
+
+    }
+
+}
+
+/* =========================================
+   Reduced Motion
+========================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+
+
+
+
+
+/* ==========================
+   Phase5-3
+   Scroll Animation Final
+========================== */
+
+/* -----------------------------------------
+   Fade Up Base
+----------------------------------------- */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(24px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.22,1,.36,1);
+
+    will-change:opacity, transform;
+
+}
+
+
+/* -----------------------------------------
+   Visible
+----------------------------------------- */
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* -----------------------------------------
+   Animation Delay
+----------------------------------------- */
+
+.fade-up.delay-1{
+
+    transition-delay:.08s;
+
+}
+
+
+.fade-up.delay-2{
+
+    transition-delay:.16s;
+
+}
+
+
+.fade-up.delay-3{
+
+    transition-delay:.24s;
+
+}
+
+
+.fade-up.delay-4{
+
+    transition-delay:.32s;
+
+}
+
+
+/* -----------------------------------------
+   Smartphone
+----------------------------------------- */
+
+@media (max-width:768px){
+
+    .fade-up{
+
+        transform:translateY(18px);
+
+    }
+
+}
+
+
+/* =========================================
+   導入事例 Cards
+   Step 4 Design ④
+========================================= */
+
+.section:not(.section-green):not(.section-light):not(.section-dark)
+.grid .card:nth-child(1) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(252,247,232,0.86),
+            rgba(255,255,255,0.18)
+        );
+
+    border-color:
+        rgba(200,169,106,0.34);
+}
+
+
+.section:not(.section-green):not(.section-light):not(.section-dark)
+.grid .card:nth-child(1)::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -145px;
+    top: -145px;
+
+    border-radius:
+        60% 40% 68% 32%
+        /
+        38% 62% 40% 60%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(200,169,106,0.34) 0%,
+            rgba(200,169,106,0.17) 38%,
+            rgba(200,169,106,0.06) 58%,
+            transparent 76%
+        );
+
+    transform: rotate(18deg);
+
+    z-index: 1;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.section:not(.section-green):not(.section-light):not(.section-dark)
+.grid .card:nth-child(2) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(232,244,253,0.84),
+            rgba(255,255,255,0.18)
+        );
+
+    border-color:
+        rgba(60,120,165,0.24);
+}
+
+
+.section:not(.section-green):not(.section-light):not(.section-dark)
+.grid .card:nth-child(2)::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 390px;
+    height: 230px;
+
+    right: -150px;
+    top: -80px;
+
+    border-radius:
+        55% 45% 65% 35%
+        /
+        45% 55% 45% 55%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(55,125,175,0.28),
+            rgba(75,145,190,0.14),
+            rgba(75,145,190,0)
+        );
+
+    transform: rotate(-18deg);
+
+    z-index: 1;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.section:not(.section-green):not(.section-light):not(.section-dark)
+.grid .card:nth-child(3) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(230,247,239,0.82),
+            rgba(255,255,255,0.18)
+        );
+
+    border-color:
+        rgba(11,61,46,0.22);
+}
+
+
+.section:not(.section-green):not(.section-light):not(.section-dark)
+.grid .card:nth-child(3)::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    right: -150px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(11,61,46,0.30) 0%,
+            rgba(11,61,46,0.16) 38%,
+            rgba(11,61,46,0.06) 58%,
+            transparent 76%
+        );
+
+    z-index: 1;
+
+    transition:
+        transform 0.7s ease;
+}
+
+/* =========================================
+   STEP 5-1
+   Section Global Design
+   統一感・余白・見出し
+========================================= */
+
+/* -----------------------------------------
+   Section Base
+----------------------------------------- */
+
+.section,
+.section-light,
+.section-green,
+.section-white,
+.section-dark {
+
+    position: relative;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+
+
+/* -----------------------------------------
+   Section Content Width
+----------------------------------------- */
+
+.section > h2,
+.section-light > h2,
+.section-green > h2,
+.section-white > h2,
+.section-dark > h2 {
+
+    width: min(1100px, 90%);
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+/* -----------------------------------------
+   Section Heading
+----------------------------------------- */
+
+.section > h2,
+.section-light > h2,
+.section-green > h2,
+.section-white > h2,
+.section-dark > h2 {
+
+    position: relative;
+
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    padding-left: 18px;
+
+    border-left: 5px solid var(--accent);
+
+    color: #0b3d2e;
+
+    font-size: clamp(
+        1.8rem,
+        3vw,
+        2.5rem
+    );
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: .06em;
+
+}
+
+
+/* -----------------------------------------
+   Dark Section Heading
+----------------------------------------- */
+
+.section-dark > h2 {
+
+    color: #ffffff;
+
+    border-left-color: var(--accent);
+
+}
+
+
+/* -----------------------------------------
+   Section Background
+----------------------------------------- */
+
+.section-white {
+
+    background: #ffffff;
+
+}
+
+.section-light {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f5f7f3 0%,
+            #ffffff 100%
+        );
+
+}
+
+.section-green {
+
+    background:
+        linear-gradient(
+            180deg,
+            #edf4ef 0%,
+            #ffffff 100%
+        );
+
+}
+
+
+/* -----------------------------------------
+   Mobile
+----------------------------------------- */
+
+@media (max-width:768px){
+
+    .section,
+    .section-light,
+    .section-green,
+    .section-white,
+    .section-dark {
+
+        padding-top: 70px;
+        padding-bottom: 70px;
+
+    }
+
+
+    .section > h2,
+    .section-light > h2,
+    .section-green > h2,
+    .section-white > h2,
+    .section-dark > h2 {
+
+        width: calc(100% - 40px);
+
+        margin-bottom: 32px;
+
+        padding-left: 14px;
+
+        border-left-width: 4px;
+
+        font-size:
+            clamp(
+                1.55rem,
+                7vw,
+                2.1rem
+            );
+
+        letter-spacing: .04em;
+
+    }
+
+}
+
+
+/* =========================================
+   STEP 5-1②
+   Section間の余白・見出し位置を統一
+========================================= */
+
+.section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.section h2 {
+    margin-bottom: 45px;
+}
+
+/* =========================================
+   STEP 5-1③①
+   Section間の余白を統一
+========================================= */
+
+.section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* =========================================
+   STEP 5-1③②
+   Section内コンテンツの上下バランス
+========================================= */
+
+.section h2 {
+    margin-bottom: 42px;
+}
+
+/* =========================================
+   STEP 5-1③③
+   Card Grid 全体の左右バランス
+========================================= */
+
+.card-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   STEP 5-1③④
+   Section内の余白・下部バランス調整
+========================================= */
+
+.section-light {
+    padding-bottom: 90px;
+}
+
+/* =========================================
+   STEP 5-1③⑤
+   Section全体の上下の呼吸感 微調整
+========================================= */
+
+.section-light {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+/* =========================================
+   STEP 5-1③⑥
+   Section見出しとCard群の間隔 微調整
+========================================= */
+
+.section-light h2 {
+    margin-bottom: 42px;
+}
+
+/* =========================================
+   STEP 5-1③⑦
+   Card群とSection下端の余白 微調整
+========================================= */
+
+.section-light .card-grid {
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   STEP 5-1④
+   Section見出し 上下バランス微調整
+========================================= */
+
+.section-light h2 {
+    margin-top: 0;
+    margin-bottom: 42px;
+}
+
+/* =========================================
+   STEP 5-1④②
+   Section見出しの文字間隔 微調整
+========================================= */
+
+.section-light h2 {
+    letter-spacing: 0.04em;
+}
+
+/* =========================================
+   STEP 5-1④③
+   Section見出しとCard群の視覚的なつながり
+========================================= */
+
+.section-light h2 {
+    line-height: 1.25;
+}
+
+/* =========================================
+   STEP 5-1④④
+   Section全体の横方向バランス 微調整
+========================================= */
+
+.section-light .card-grid {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   STEP 5-1④⑤
+   Card群の最大表示幅を安定させる
+========================================= */
+
+.section-light .card-grid {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   STEP 5-1④⑥
+   Card群下部の余白を微調整
+========================================= */
+
+.section-light .card-grid {
+    margin-bottom: 16px;
+}
+
+/* =========================================
+   STEP 5-1④⑦
+   Section全体の縦方向バランス 最終微調整
+========================================= */
+
+.section-light {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   STEP 5-1⑤①
+   Section間の統一感
+========================================= */
+
+.section-light + .section-light {
+    border-top: none;
+}
+
+/* =========================================
+   STEP 5-1⑤②
+   Section間の余白バランス
+========================================= */
+
+.section-light + .section-light {
+    padding-top: 86px;
+}
+
+/* =========================================
+   STEP 5-1⑤③
+   Section間のつながり 微調整
+========================================= */
+
+.section-light {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   STEP 5-1⑤④
+   Section全体の最終的な奥行き調整
+========================================= */
+
+.section-light {
+    isolation: isolate;
+}
+
+/* =========================================
+   STEP 5-1⑤④
+   Card内テキスト フォントサイズ調整
+========================================= */
+
+/* Cardタイトル */
+.card h3 {
+    font-size: 1.25em;
+}
+
+/* Card本文 */
+.card p {
+    font-size: 1.25em;
+    line-height: 1.8;
+}
+
+/* =========================================
+   STEP 5-1⑤④
+   取引先企業 リスト文字サイズ調整
+========================================= */
+
+.section ul li {
+    font-size: 1.25em;
+    line-height: 1.8;
+}
+
+/* =========================================
+   STEP 5-1⑤④
+   1日の流れ フォントサイズ調整
+========================================= */
+
+.flow-step {
+    font-size: 1.25em;
+}
+
+/* =========================================
+   STEP 5-1⑤⑤
+   Card内の文字量増加に合わせた余白調整
+========================================= */
+
+.card {
+    padding: 28px;
 }
