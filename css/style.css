@@ -1328,7 +1328,8 @@ TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST  */
     border-radius: 28px;
 
     /* 強化された立体感 */
-
+  
+    /*
     box-shadow:
 
         0 32px 65px
@@ -1345,7 +1346,8 @@ TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST  */
 
         inset 0 -2px 0
         rgba(0,0,0,0.05);
-
+    */
+    
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
@@ -3040,12 +3042,16 @@ display:none;
 
 .section-light {
 
+    /* TEST
     background:
     linear-gradient(
         180deg,
         #f5f7f3 0%,
         #ffffff 100%
     );
+    */
+
+    background: #ffffff; /* TEST */
 
 }
 
@@ -3053,7 +3059,6 @@ display:none;
 .section-white {
 
     background:#ffffff;
-
 }
 
 
@@ -3256,8 +3261,9 @@ display:none;
     left: -5%;
 
     width: 110%;
-    height: 90px;
-
+  
+    height: 90px; 
+  
     /*
        Waveの基本色
     */
@@ -4582,22 +4588,21 @@ section h2{
 }
 
 /* =========================================
-   STEP 5-1⑤③
-   Section間のつながり 微調整
+   STEP 5-1⑤①
+   Section間の統一感
 ========================================= */
 
-.section-light {
-    position: relative;
-    z-index: 1;
+.section-light + .section-light {
+    border-top: none;
 }
 
 /* =========================================
-   STEP 5-1⑤④
-   Section全体の最終的な奥行き調整
+   STEP 5-1⑤①
+   Section間の統一感
 ========================================= */
 
-.section-light {
-    isolation: isolate;
+.section-light + .section-light {
+    border-top: none;
 }
 
 /* =========================================
@@ -4642,4 +4647,211 @@ section h2{
 
 .card {
     padding: 28px;
+}
+
+/* =========================================
+   STEP 5-1⑥①
+   Card内テキスト 上下バランス微調整
+========================================= */
+
+.card h3 {
+    margin-bottom: 14px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   STEP 5-1⑥②
+   Card アイコンとタイトルの間隔 微調整
+========================================= */
+
+.card-icon {
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   STEP 5-1⑥③
+   Card 本文とボタンの間隔 微調整
+========================================= */
+
+.card .btn {
+    margin-top: 6px;
+}
+
+/* =========================================
+   STEP 5-1⑥③
+   Contact / Recruitment Text Size
+========================================= */
+
+.contact-lead,
+.contact-lead + p,
+.contact-lead + p + p,
+.contact-lead + p + p + p,
+.contact-lead + p + p + p + p {
+    font-size: 1.2em;
+    line-height: 1.9;
+}
+
+/* =========================================
+   STEP 5-1⑥④
+   Contact Form Typography
+========================================= */
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.contact-form button {
+    font-size: 1.05em;
+}
+
+/* =========================================
+   STEP 5-1⑥④②
+   Contact Form Typography
+========================================= */
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.contact-form button {
+    font-size: 1.05em;
+}
+
+/* =========================================
+   STEP 5-1⑥⑤
+   Contact / Recruitment Text Spacing
+========================================= */
+
+.contact-lead,
+.contact-lead + p,
+.contact-lead + p + p,
+.contact-lead + p + p + p,
+.contact-lead + p + p + p + p {
+    margin-bottom: 1em;
+}
+
+/* =========================================
+   STEP 5-1⑥⑥
+   Contact / Recruitment Content Width
+========================================= */
+
+.contact-lead,
+.contact-lead + p,
+.contact-lead + p + p,
+.contact-lead + p + p + p,
+.contact-lead + p + p + p + p,
+.contact-form {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   STEP 5-1⑥⑦
+   Contact / Recruitment Section Bottom Space
+========================================= */
+
+.contact-form {
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   STEP 5-1⑥⑧
+   Contact / Recruitment Mobile Balance
+========================================= */
+
+@media (max-width:768px){
+
+    .contact-lead,
+    .contact-lead + p,
+    .contact-lead + p + p,
+    .contact-lead + p + p + p,
+    .contact-lead + p + p + p + p,
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+/* =========================================
+   STEP 5-1⑦①
+   Client List Spacing
+========================================= */
+
+.section ul li {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   STEP 5-1⑦②
+   Client List Heading Spacing
+========================================= */
+
+.section h2 + ul {
+    margin-top: 8px;
+}
+
+/* =========================================
+   STEP 5-1⑦③
+   Client List Horizontal Balance
+========================================= */
+
+.section h2 + ul {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   STEP 5-1⑦③
+   WORKS Gold Wave Layer Fix
+========================================= */
+
+.section-green.wave-top {
+    z-index: 2;
+}
+
+/* =========================================
+   STEP 5-1⑦③
+   GREEN WAVE Gray Band Remove
+========================================= */
+
+.section-light.wave-top::before {
+    box-shadow: none;
+
+}
+
+/* =========================================
+   STEP 5-1⑦③
+   GREEN WAVE 上部グレー帯除去
+========================================= */
+
+.section-green.wave-top::before {
+    top: -1px;
+}
+
+
+/* =========================================
+   COMPANY CARD
+   SERVICEのCARD幅に合わせる
+========================================= */
+
+#company > .card {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
