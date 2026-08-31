@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社R HILL FARM | IT × スマート農業の融合</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent-green: #15803d;
+            --accent-green-light: #22c55e;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 550px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 58, 138, 0.65) 100%), 
+                        url('IT農業ドローンテスト風景.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 0 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(34, 197, 94, 0.2);
+            border: 1px solid var(--accent-green-light);
+            color: #4ade80;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent-green);
+            color: #ffffff;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 10px 25px rgba(21, 128, 61, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #166534;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(21, 128, 61, 0.4);
+        }
+
+        /* --- Common Section Styles --- */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        /* --- About / Collaboration Section --- */
+        .about-grid {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f1f5f9;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.25rem;
+            line-height: 1.35;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .service-card-body {
+            padding: 1.75rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-dark);
+            color: #94a3b8;
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .footer-logo span {
+            color: var(--accent-green-light);
+        }
+
+        .footer-copy {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.875rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .about-grid {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero {
+                height: auto;
+                padding: 6rem 0;
+            }
+            section {
+                padding: 4rem 1.5rem;
+            }
+            .footer-container {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダーナビゲーション -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">R HILL FARM <span> 太子農園</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">ビジョン</a></li>
+                <li><a href="#services">事業・ソリューション</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション（背景: IT農業ドローンテスト風景.jpg） -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">IT × AgTech Innovation</span>
+            <h1>コードと農地を直結し、<br>次世代の農業基盤を創る。</h1>
+            <p>ソフトウェア開発力と現場の実証フィールドを併せ持つ「R HILL FARM」。<br>先端エンジニアリングが日本の農業現場にリアルな革新をもたらします。</p>
+            <a href="#services" class="btn-primary">ソリューションを見る</a>
+        </div>
+    </div>
+
+    <!-- 会社理念・コラボレーション（画像: ITプログラミング風景.jpg） -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="ITプログラミング風景.jpg" alt="自社開発プログラミング風景">
+            </div>
+            <div class="about-text">
+                <div class="section-subtitle">OUR PHILOSOPHY</div>
+                <h3>開発オフィスから<br>農地の最前線へ直接インプリメント</h3>
+                <p>自社オフィスで構築したAIアルゴリズムや解析システムは、現場で使われてこそ真の価値を発揮します。私たちは画面の向こう側のシステム開発にとどまらず、自社技術をそのまま実証農地へ投入。</p>
+                <p>アグリテックの現場ニーズを直接コードへフィードバックすることで、真に機能するアグリITソリューションをハイスピードで創出します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 事業・ソリューション（4つの画像カード） -->
+    <section id="services">
+        <div class="section-header">
+            <div class="section-subtitle">SERVICES & SOLUTIONS</div>
+            <h2>IT×農業のイノベーション事業</h2>
+            <p>システム開発から現場実装・機材運用までを一貫して提供する独自のアプローチ</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- カード1: ITプログラミング風景.jpg -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="ITプログラミング風景.jpg" alt="アグリITソフトウェア開発">
+                </div>
+                <div class="service-card-body">
+                    <div class="service-tag">SYSTEM DEVELOPMENT</div>
+                    <h3>アグリIT・ソフトウェア開発</h3>
+                    <p>気象データ、画像解析、生育データを統合管理するダッシュボードや、自律制御アルゴリズムの開発をおこないます。</p>
+                </div>
+            </div>
+
+            <!-- カード2: IT農業ドローンテスト風景.jpg -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="IT農業ドローンテスト風景.jpg" alt="ドローンセンシング・実証実験">
+                </div>
+                <div class="service-card-body">
+                    <div class="service-tag">DRONE SENSING</div>
+                    <h3>ドローン飛行テスト・農地解析</h3>
+                    <p>自律飛行ドローンを用いた圃場センシング。高精度カメラ・各種センサーにより広大な作物の生育診断を自動化します。</p>
+                </div>
+            </div>
+
+            <!-- カード3: IT農業遠隔監視テスト風景.jpg -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="IT農業遠隔監視テスト風景.jpg" alt="農場遠隔監視IoTソリューション">
+                </div>
+                <div class="service-card-body">
+                    <h3>農場IoT・遠隔監視システム</h3>
+                    <p>ソーラー駆動のカメラシステムや各種環境センサーを圃場に設置。リモート環境から現場状況を常時データ化・監視します。</p>
+                </div>
+            </div>
+
+            <!-- カード4: 機械農作業風景.jpg -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="機械農作業風景.jpg" alt="自社農園でのスマート農機運用">
+                </div>
+                <div class="service-card-body">
+                    <div class="service-tag">FIELD OPERATION</div>
+                    <h3>「太子農園」スマート基盤運用</h3>
+                    <p>大型重機やスマート農機を駆使した土壌基盤整備。自社農園「太子農園」において最先端の農業テクノロジーを実地検証しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">R HILL FARM <span>太子農園</span></div>
+            <p>株式会社R HILL FARM | IT×スマート農業の推進企業</p>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 R HILL FARM Co., Ltd. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

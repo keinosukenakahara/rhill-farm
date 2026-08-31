@@ -4855,3 +4855,279 @@ section h2{
     margin-right: auto;
     box-sizing: border-box;
 }
+
+/* ========================================
+   COMPANY CARD：写真背景
+   STEP 1
+======================================== */
+/* TEST
+#company .card {
+
+    position: relative;
+
+    background:
+        url("../img/company_card.jpg")
+        center / cover no-repeat;
+
+    overflow: hidden;
+
+}
+*/
+
+
+/* ========================================
+   COMPANY CARD：HERO風 背景テスト
+   ::beforeを使用しない
+======================================== */
+
+#company .card {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.35),
+            rgba(255,255,255,0.35)
+        ),
+        url("../img/company_card.jpg")
+        center / cover no-repeat;
+
+    overflow: hidden;
+
+}
+
+/* ========================================
+   COMPANY CARD：背景写真 薄さテスト
+======================================== */
+/* TEST
+#company .card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255,255,255,0.250);
+
+    z-index: 0;
+
+}
+*/
+
+#company .card > * {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+/* COMPANY CARD テキスト */
+
+#company .card h3,
+#company .card p {
+
+    color: #ffffff;
+
+    text-shadow:
+        0 1px 5px rgba(0,0,0,0.45);
+
+}
+
+/* ========================================
+   COMPANY CARD：HERO風レイアウト
+   STEP 3
+======================================== */
+
+/* COMPANY CARD 全体 */
+
+#company .card {
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+/* COMPANY タイトル */
+
+#company .card h3 {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 6px rgba(0,0,0,0.50);
+
+}
+
+
+/* COMPANY 説明文 */
+
+#company .card p {
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 1px 5px rgba(0,0,0,0.50);
+
+}
+
+
+/* アイコン */
+
+#company .card .card-icon {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* VIEW MORE ボタン */
+
+#company .card .btn {
+
+    margin-top: 24px;
+
+}
+
+
+/* ========================================
+   COMPANY CARD
+   タイトル・説明文の文字サイズ
+======================================== */
+
+#company .card h3 {
+    font-size: 28px;
+}
+
+#company .card p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+#company .card p {
+    font-size: 22px;
+    line-height: 1.9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   COMPANY SECTION（カード周囲の白余白に回路・波形を描画）
+===================================================== */
+
+/* 1. COMPANYセクション全体の背景（カードの外側の余白部分） */
+#company.section-white,
+#company {
+    position: relative !important;
+    /* 外側を明るく澄んだテックトーン（淡いペールブルーグリーン）に設定 */
+    background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 50%, #f1f5f9 100%) !important;
+    overflow: hidden !important;
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+
+/* 2. カードの外側（周囲領域）に走る「電子回路 ＆ デジタルグリッド」 */
+#company::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    /* デジタルグリッド線 ＋ 回路ノード（丸と配線）のハイテクSVGグラフィック */
+    background-image: 
+        /* 背景グリッド */
+        linear-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+        /* 回路パターン */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%230284c7' stroke-width='1.5' stroke-opacity='0.35'%3E%3Cpath d='M0 40 h50 l25 25 h85'/%3E%3Cpath d='M40 160 v-50 l25-25 v-85'/%3E%3Cpath d='M160 120 h-40 l-25-25 h-95'/%3E%3Cpath d='M120 0 v40 l-20 20 v100'/%3E%3Ccircle cx='75' cy='65' r='4' fill='%230284c7' fill-opacity='0.5'/%3E%3Ccircle cx='65' cy='85' r='4' fill='%2310b981' fill-opacity='0.6'/%3E%3Ccircle cx='120' cy='120' r='3.5' fill='%230284c7' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: 32px 32px, 32px 32px, 160px 160px !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+/* 3. カードの外側（上下・左右の余白）に流れる「通信波形（Signal Wave）」 */
+#company::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='200' viewBox='0 0 800 200'%3E%3Cpath d='M0 100 Q 100 30, 200 100 T 400 100 T 600 100 T 800 100' fill='none' stroke='%230284c7' stroke-width='2' stroke-opacity='0.25' stroke-dasharray='8,6'/%3E%3Cpath d='M0 130 Q 150 180, 300 130 T 600 130 T 900 130' fill='none' stroke='%2310b981' stroke-width='2' stroke-opacity='0.3'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat-x !important;
+    background-position: bottom center !important;
+    background-size: 800px 200px !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+/* タイトルやカードなどのコンテンツを回路パターンの手前に配置 */
+#company > * {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+
+/* =====================================================
+   COMPANY CARD（中央の写真カード本体の最適化）
+===================================================== */
+
+/* 4. カード本体：写真はそのままクリアに表示し、周囲にネオン青緑の発光枠線を設定 */
+#company .card {
+    position: relative !important;
+    /* 写真自体は100%綺麗に表示 */
+    background: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.20), 
+            rgba(255, 255, 255, 0.35)
+        ),
+        url("../img/company_card.jpg") center / cover no-repeat !important;
+    
+    border-radius: 20px !important;
+    border: 1.5px solid rgba(14, 165, 233, 0.4) !important; /* テックブルーの輪郭 */
+    /* 外側の背景回路に溶け込むサイバーグロー効果（青＆緑の発光シャドウ） */
+    box-shadow: 
+        0 15px 35px -5px rgba(15, 23, 42, 0.15),
+        0 0 25px 2px rgba(14, 165, 233, 0.25),
+        0 0 40px 8px rgba(16, 185, 129, 0.15) !important;
+    transition: all 0.4s ease !important;
+    overflow: hidden !important;
+}
+
+/* カードHover時：周囲の回路と繋がるような強い発光 */
+#company .card:hover {
+    transform: translateY(-5px) scale(1.005) !important;
+    border-color: rgba(14, 165, 233, 0.8) !important;
+    box-shadow: 
+        0 20px 45px -5px rgba(15, 23, 42, 0.2),
+        0 0 35px 5px rgba(14, 165, 233, 0.4),
+        0 0 50px 12px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* タイトル文字の見栄え補正 */
+#company .section-title h2 {
+    color: #0b3d2e !important;
+    font-weight: 800;
+}
