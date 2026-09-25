@@ -5097,6 +5097,7 @@ section h2{
 /* 4. カード本体：写真はそのままクリアに表示し、周囲にネオン青緑の発光枠線を設定 */
 #company .card {
     position: relative !important;
+    margin-top: 60px;
     /* 写真自体は100%綺麗に表示 */
     background: 
         linear-gradient(
@@ -5131,3 +5132,317 @@ section h2{
     color: #0b3d2e !important;
     font-weight: 800;
 }
+
+
+/* =========================================================
+   R HILL FARM
+   Company Profile Background Image
+   ========================================================= */
+
+
+#company-profile {
+    position: relative;
+    overflow: hidden;
+    
+    margin-top: 80px !important;
+    padding-top: 100px !important;
+    
+
+    /* 背景画像全体の角を丸める */
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            rgba(4, 45, 35, 0.40),
+            rgba(4, 45, 35, 0.50)
+        ),
+
+        url("../company/会社概要.png")
+        center center / cover
+        no-repeat;
+}
+
+/* 背景画像の上に薄いガラス感を追加 */
+#company-profile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(11, 61, 46, 0.12),
+            rgba(200, 169, 106, 0.08)
+        );
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* COMPANY PROFILE の見出し */
+#company-profile .section-header {
+    position: relative;
+    z-index: 2;
+}
+
+#company-profile .section-header .section-subtitle {
+    color: #e4c982;
+    letter-spacing: 4px;
+}
+
+#company-profile .section-header h2 {
+    color: #ffffff;
+}
+
+
+
+
+
+
+/* =========================================================
+   Company Profile Card
+   背景画像を見せるため、カードは半透明にする
+   ========================================================= */
+
+/* =========================================================
+   Company Profile Card
+   ========================================================= */
+
+#company-profile .company-profile-card {
+    position: relative;
+    z-index: 2;
+
+    /* 背景画像を見せるため透明度を高くする */
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.14)
+        );
+
+    /*
+       背景画像をぼかさない
+       ※ backdrop-filter: blur(8px) は削除
+    */
+
+    border-radius: 24px;
+
+    padding: 3rem 3.5rem;
+
+    /* 枠線も薄くする */
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.18),
+        0 8px 20px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ゴールドのアクセントライン
+   ========================================================= */
+
+#company-profile .company-profile-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a98642,
+            #e8d39c,
+            #fff0bd,
+            #c8a96a,
+            #a98642
+        );
+
+    box-shadow:
+        0 3px 12px rgba(200, 169, 106, 0.45);
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   会社情報
+   ========================================================= */
+
+#company-profile .company-profile-list {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+}
+
+
+/* 各会社情報 */
+
+#company-profile .company-profile-list > div {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 2rem;
+
+    /* 行間を詰める */
+    padding: 0.8rem 0;
+
+    border-bottom:
+        1px solid rgba(11, 61, 46, 0.15);
+}
+
+
+/* 最初の項目 */
+
+#company-profile .company-profile-list > div:first-child {
+    padding-top: 0;
+}
+
+
+/* 最後の項目 */
+
+#company-profile .company-profile-list > div:last-child {
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   項目名
+   ========================================================= */
+
+#company-profile .company-profile-list dt {
+     color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 1.15rem;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   会社情報の内容
+   ========================================================= */
+
+#company-profile .company-profile-list dd {
+     color: #ffffff;
+
+    margin: 0;
+
+    font-size: 1.12rem;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   会社名のふりがな
+   ========================================================= */
+
+#company-profile .company-profile-list dd span {
+    color: #ffffff;
+    
+    font-size: 0.88rem;
+
+    line-height: 1.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #company-profile {
+        background-position: center center;
+    }
+
+    #company-profile .company-profile-card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    #company-profile .company-profile-list > div {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        padding: 1rem 0;
+    }
+
+    #company-profile .company-profile-list dt {
+        font-size: 0.95rem;
+    }
+
+    #company-profile .company-profile-list dd {
+        font-size: 0.95rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    #company-profile {
+        background-position: center center;
+
+        /* スマホでは少し控えめな角丸 */
+        border-radius: 20px;
+    }
+
+    #company-profile .company-profile-card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    #company-profile .company-profile-list > div {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        padding: 1rem 0;
+    }
+
+    #company-profile .company-profile-list dt {
+        font-size: 0.95rem;
+    }
+
+    #company-profile .company-profile-list dd {
+        font-size: 0.95rem;
+    }
+}
+
+
+#philosophy .philosophy-quote p {
+    color: #ffffff;
+
+    font-size: 1.15rem;
+
+    line-height: 1.5;
+
+    font-weight: 500;
+
+    margin: 0;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
